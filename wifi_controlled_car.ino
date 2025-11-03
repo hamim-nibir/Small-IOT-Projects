@@ -5,7 +5,11 @@
    - L298N Motor Driver
    - 4 DC Motors (2 left, 2 right)
    - Web-based control interface
-   ========================== */
+   ========================== 
+   Somethibg chabged in the control
+   right -> forward
+   left -> backward
+   */
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
@@ -15,8 +19,8 @@
 const char* STA_SSID = "HOGWART";
 const char* STA_PASS = "dracarys!!";
 
-const char* AP_SSID = "ESP_Robot";
-const char* AP_PASS = "robot1234"; // must be 8+ characters
+const char* AP_SSID = "Rigel";
+const char* AP_PASS = "Rigel1234"; // must be 8+ characters
 
 // ---------- MOTOR PINS ----------
 const uint8_t ENA = 5;   // D1 - Left motor speed
@@ -109,13 +113,13 @@ footer{text-align:center;font-size:12px;color:#777;margin-top:12px}
 </head>
 <body>
 <div class="container">
-<h2>ESP8266 Robot Car</h2>
+<h2>Your Buddy | RIGEL</h2>
 <div style="text-align:center">
-<button class="forward" onclick="send('forward')">Forward</button><br>
-<button class="left" onclick="send('left')">Left</button>
+<button class="forward" onclick="send('right')">Forward</button><br>
+<button class="left" onclick="send('forward')">Left</button>
+<button class="right" onclick="send('back')">Right</button>
+<button class="back" onclick="send('left')">Backward</button><br>
 <button class="stop" onclick="send('stop')">Stop</button>
-<button class="right" onclick="send('right')">Right</button><br>
-<button class="back" onclick="send('back')">Backward</button>
 </div>
 <div class="label">Speed: <span id="spdVal">700</span></div>
 <input type="range" min="0" max="1023" value="700" id="speed" oninput="updateSpeed(this.value)">
