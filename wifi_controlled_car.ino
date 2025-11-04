@@ -113,7 +113,7 @@ void runAutopilot() {
   delay(100);
   long frontDist = readDistance();
 
-  if (frontDist > 20 || frontDist == 0) {
+  if (frontDist > 40 || frontDist == 0) {
     rightCmd();
     return;
   }
